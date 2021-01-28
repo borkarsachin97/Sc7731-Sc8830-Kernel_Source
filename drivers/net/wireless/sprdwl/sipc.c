@@ -1070,7 +1070,7 @@ int sprdwl_pm_later_resume_cmd(struct wlan_sipc *sipc)
 	return 0;
 }
 
-int sprdwl_set_cmq_rssi(struct wlan_sipc *sipc, s32 rssi_thold, u32 rssi_hyst)
+int sprdwl_set_cqm_rssi(struct wlan_sipc *sipc, s32 rssi_thold, u32 rssi_hyst)
 {
 	struct wlan_sipc_data *send_buf = sipc->send_buf;
 	struct wlan_sipc_cqm_rssi *cmd;

@@ -2294,9 +2294,9 @@ void sprdwl_event_mlme_tx_status(struct sprdwl_vif *vif)
  * This function subscribes/unsubscribes HIGH_RSSI and LOW_RSSI
  * events to FW.
  */
-int sprdwl_cfg80211_cqm_rssi_config(struct wiphy *wiphy,
-				    struct net_device *ndev,
-				    s32 rssi_thold, u32 rssi_hyst)
+int sprdwl_cfg80211_set_cqm_rssi_config(struct wiphy *wiphy,
+					struct net_device *ndev,
+					s32 rssi_thold, u32 rssi_hyst)
 {
 	struct sprdwl_priv *priv = wiphy_priv(wiphy);
 	int ret;
@@ -2304,7 +2304,7 @@ int sprdwl_cfg80211_cqm_rssi_config(struct wiphy *wiphy,
 	wiphy_info(wiphy, "%s rssi_thold %d rssi_hyst %d",
 		   __func__, rssi_thold, rssi_hyst);
 
-	ret = sprdwl_set_cmq_rssi(priv->sipc, rssi_thold, rssi_hyst);
+	ret = sprdwl_set_cqm_rssi(priv->sipc, rssi_thold, rssi_hyst);
 
 	return ret;
 }
@@ -2324,7 +2324,7 @@ static struct cfg80211_ops sprdwl_cfg80211_ops = {
 	.set_pmksa = sprdwl_cfg80211_set_pmksa,
 	.del_pmksa = sprdwl_cfg80211_del_pmksa,
 	.flush_pmksa = sprdwl_cfg80211_flush_pmksa,
-	.set_cqm_rssi_config = sprdwl_cfg80211_cqm_rssi_config,
+	.set_cqm_rssi_config = sprdwl_cfg80211_set_cqm_rssi_config,
 	/* AP mode */
 	.start_ap = sprdwl_cfg80211_start_ap,
 	.change_beacon = sprdwl_cfg80211_change_beacon,

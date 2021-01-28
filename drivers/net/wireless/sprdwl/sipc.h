@@ -552,7 +552,7 @@ extern int sprdwl_pm_exit_ps_cmd(struct wlan_sipc *sipc);
 
 extern int sprdwl_pm_early_suspend_cmd(struct wlan_sipc *sipc);
 extern int sprdwl_pm_later_resume_cmd(struct wlan_sipc *sipc);
-extern int sprdwl_set_cmq_rssi(struct wlan_sipc *sipc,
+extern int sprdwl_set_cqm_rssi(struct wlan_sipc *sipc,
 			       s32 rssi_thold, u32 rssi_hyst);
 extern int sprdwl_set_regdom_cmd(struct wlan_sipc *sipc, u8 *regdom, u16 len);
 extern int sprdwl_mac_open_cmd(struct wlan_sipc *sipc, u8 mode, u8 *mac_addr);
